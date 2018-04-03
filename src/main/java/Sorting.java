@@ -56,7 +56,27 @@ public class Sorting {
      */
     @SuppressWarnings("unused")
     private static int[] selectionSort(final int[] array) {
-        return null;
+        int low = 0;
+        int high = array.length;
+        swap(array, low, findMin(array, low, high));
+    }
+
+    private int findMin(final int[] array, final int low, final int high) {
+        int min = array[0];
+        int minIndex = 0;
+        for (int i = 1; i < array.length; i++) {
+            if (min > array[i]) {
+                min = array[i];
+                minIndex = i;
+            }
+        }
+        return minIndex;
+    }
+
+    private int[] swap(final int[] array, final int low, final int minIndex) {
+        int temp1 = array[low];
+        int temp2 = array[minIndex];
+
     }
 
     /**
